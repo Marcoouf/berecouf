@@ -9,9 +9,8 @@ export default function CustomCursor() {
 
   const gradientColors = [
     "#3b82f6", // bleu
-    "#60a5fa", // bleu clair
-    "#a855f7", // violet clair
-    "#ec4899", // fuchsia
+
+    "#ff00cc", // fuchsia
   ];
 
   useEffect(() => {
@@ -60,6 +59,7 @@ export default function CustomCursor() {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

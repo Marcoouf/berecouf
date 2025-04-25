@@ -13,22 +13,16 @@ export default function Galerie() {
   return (
     <div className="p-4">
 <motion.h1
-
-  initial={{ opacity: 0, y: 30 }}
+  initial={{ opacity: 1, scale: 1 }}
   animate={{
-    opacity: 1,
-    y: 0,
-    scale: [1, 1.03, 1],
-    textShadow: [
-      "0px 0px 0px rgba(255, 0, 255, 0)",
-      "0px 0px 10px rgba(255, 0, 255, 0.5)",
-      "0px 0px 0px rgba(255, 0, 255, 0)"
-    ]
+    scale: [1, 1.15, 1, 1.1, 1],
+    opacity: [1, 0.95, 1, 0.97, 1],
   }}
   transition={{
-    duration: 2.5,
+    duration: 3.2,
     repeat: Infinity,
-    ease: "easeInOut"
+    ease: "easeInOut",
+    times: [0, 0.2, 0.4, 0.6, 1],
   }}
   className="text-5xl sm:text-6xl text-center mb-12 
              bg-gradient-to-r from-blue-400 via-indigo-600 to-[#ff00cc] 
