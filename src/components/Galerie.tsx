@@ -2,7 +2,7 @@
 import Masonry from "react-masonry-css";
 import { oeuvres } from "@/data/oeuvres";
 import { motion } from "framer-motion";
-
+import Image from "next/image"; // n'oublie pas cet import en haut du fichier
 export default function Galerie() {
   const breakpoints = {
     default: 3,
@@ -12,25 +12,7 @@ export default function Galerie() {
 
   return (
     <div className="p-4">
-<motion.h1
-  initial={{ opacity: 1, scale: 1 }}
-  animate={{
-    scale: [1, 1.15, 1, 1.1, 1],
-    opacity: [1, 0.95, 1, 0.97, 1],
-  }}
-  transition={{
-    duration: 3.2,
-    repeat: Infinity,
-    ease: "easeInOut",
-    times: [0, 0.2, 0.4, 0.6, 1],
-  }}
-  className="text-5xl sm:text-6xl text-center mb-12 
-             bg-gradient-to-r from-blue-400 via-indigo-600 to-[#ff00cc] 
-             bg-clip-text text-transparent select-none 
-             font-[var(--font-playfair)]"
-  >
-  Berecouf
-</motion.h1>      
+  
 <Masonry
         breakpointCols={breakpoints}
         className="flex gap-6"
@@ -45,10 +27,12 @@ export default function Galerie() {
             className="relative overflow-hidden rounded-xl shadow-lg group"
           >
             {/* Image */}
-            <img
+            <Image
   src={oeuvre.image}
   alt={oeuvre.titre}
-  className="w-full object-cover transition-all duration-500 ease-in-out group-hover:blur-sm select-none"
+  width={500} // tu peux ajuster selon ton layout
+  height={700}
+  className="w-full h-auto object-cover transition-all duration-500 ease-in-out group-hover:blur-sm select-none"
   draggable={false}
   onContextMenu={(e) => e.preventDefault()}
 />
