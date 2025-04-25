@@ -13,16 +13,31 @@ export default function Galerie() {
   return (
     <div className="p-4">
 <motion.h1
+
   initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
+  animate={{
+    opacity: 1,
+    y: 0,
+    scale: [1, 1.03, 1],
+    textShadow: [
+      "0px 0px 0px rgba(255, 0, 255, 0)",
+      "0px 0px 10px rgba(255, 0, 255, 0.5)",
+      "0px 0px 0px rgba(255, 0, 255, 0)"
+    ]
+  }}
+  transition={{
+    duration: 2.5,
+    repeat: Infinity,
+    ease: "easeInOut"
+  }}
   className="text-5xl sm:text-6xl text-center mb-12 
-             bg-gradient-to-r from-blue-500 via-indigo-500 to-fuchsia-500 
+             bg-gradient-to-r from-blue-400 via-indigo-600 to-[#ff00cc] 
              bg-clip-text text-transparent select-none 
              font-[var(--font-playfair)]"
->
+  >
   Berecouf
-</motion.h1>      <Masonry
+</motion.h1>      
+<Masonry
         breakpointCols={breakpoints}
         className="flex gap-6"
         columnClassName="space-y-6"

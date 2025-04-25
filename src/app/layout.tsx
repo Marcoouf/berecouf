@@ -32,8 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}>
-        <CustomCursor />
-        {children}
+        <div className="relative overflow-hidden min-h-screen text-white">
+          {/* FOND GRADIENT */}
+          <div className="pointer-events-none absolute inset-0 z-[-1] bg-gradient-to-b from-black via-neutral-900 to-fuchsia-600" />
+
+          <CustomCursor />
+          {children}
+        </div>
       </body>
     </html>
   );
