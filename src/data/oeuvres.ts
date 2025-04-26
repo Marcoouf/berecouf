@@ -25,10 +25,15 @@ export const oeuvres = [
       },
       {
         id: "5",
-        titre: "Test5",
+        titre: "Promenade à Quinéville",
         image: "/images/oeuvre5.webp",
-        artiste: "Artiste A",
+        artiste: "Bérénice Duchemin",
       },
-      
+      {
+        id: "6",
+        titre: "Coup de soleil",
+        image: "/images/oeuvre6.webp",
+        artiste: "Bérénice Duchemin",
+      },
   ];
   
