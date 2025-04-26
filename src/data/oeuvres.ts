@@ -35,5 +35,11 @@ export const oeuvres = [
         image: "/images/oeuvre6.webp",
         artiste: "Bérénice Duchemin",
       },
+      {
+        id: "7",
+        titre: "Soirée folle",
+        image: "/images/oeuvre7.webp",
+        artiste: "Marcouf Lebar",
+      },
   ];
   
