@@ -6,7 +6,7 @@ import Galerie from "@/components/Galerie";
 
 export default function Home() {
   return (
-    <main className="flex flex-col overflow-x-hidden bg-black text-white">
+    <main className="flex flex-col overflow-x-hidden bg-gradient-to-b from-black to-fuchsia-600 text-white">
       {/* Titre plein écran */}
       <div className="h-screen">
         <ExplodingTitle />

@@ -17,7 +17,7 @@ export default function Galerie() {
         "
       >
         {oeuvres.map((oeuvre) => {
-          // On calcule le ratio hauteur / largeur en % pour le padding-bottom
+          // on calcule le ratio hauteur / largeur en % pour le padding-bottom
           const ratio = (oeuvre.height / oeuvre.width) * 100 + "%";
 
           return (
@@ -25,9 +25,9 @@ export default function Galerie() {
               key={oeuvre.id}
               className="break-inside-avoid"
             >
-              {/* Conteneur à ratio conservé */}
+              {/* wrapper `group` pour le hover */}
               <div
-                className="relative w-full rounded-xl overflow-hidden shadow-lg bg-black"
+                className="group relative w-full rounded-xl overflow-hidden shadow-lg"
                 style={{ paddingBottom: ratio }}
               >
                 <Image
@@ -38,14 +38,17 @@ export default function Galerie() {
                   draggable={false}
                   onContextMenu={(e) => e.preventDefault()}
                 />
-                {/* légende masquée par défaut */}
-                <div className="
-                  absolute bottom-0 left-0 w-full
-                  bg-black/60 text-white text-sm
-                  p-3 opacity-0
-                  hover:opacity-100
-                  transition-opacity duration-300
-                ">
+
+                {/* légende centrée en bas, sans bg */}
+                <div
+                  className="
+                    absolute inset-x-0 bottom-0
+                    text-center text-fuchsia-600 text-sm
+                    pb-2
+                    opacity-0 group-hover:opacity-100
+                    transition-opacity duration-300
+                  "
+                >
                   <strong>{oeuvre.titre}</strong> — {oeuvre.artiste}
                 </div>
               </div>
